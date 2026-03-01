@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini CRM Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+        <h1>Mini CRM Pro</h1>
+        <button id="themeToggle">🌗</button>
+    </header>
+
+    <!-- DASHBOARD TOP -->
+    <div class="dashboard-top">
+
+        <!-- STATS -->
+        <section class="chart-section">
+    <canvas id="crmChart"></canvas>
+            <div class="card">
+                <h3>Total Clienți</h3>
+                <p id="totalClients">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Lead-uri</h3>
+                <p id="totalLeads">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Activi</h3>
+                <p id="totalActive">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Pierduți</h3>
+                <p id="totalLost">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Valoare Totală</h3>
+                <p id="totalRevenue">€0</p>
+            </div>
+        </section>
+
+        <!-- CHART -->
+        <section class="chart-container">
+            <canvas id="crmChart"></canvas>
+        </section>
+
+    </div>
+
+    <!-- ADD CLIENT -->
+    <section class="add-client">
+        <input type="text" id="clientName" placeholder="Nume client">
+        <input type="email" id="clientEmail" placeholder="Email">
+        <input type="number" id="clientValue" placeholder="Valoare (€)">
+        
+        <select id="clientStatus">
+            <option value="Lead">Lead</option>
+            <option value="Activ">Activ</option>
+            <option value="Pierdut">Pierdut</option>
+        </select>
+
+        <input type="text" id="clientTags" placeholder="Tag-uri (ex: vip, urgent)">
+        
+        <button id="addClient">Adaugă Client</button>
+    </section>
+
+    <!-- CONTROLS -->
+    <section class="controls">
+        <input type="text" id="searchInput" placeholder="Caută client...">
+
+        <select id="filterStatus">
+            <option value="All">Toți</option>
+            <option value="Lead">Lead</option>
+            <option value="Activ">Activ</option>
+            <option value="Pierdut">Pierdut</option>
+        </select>
+
+        <select id="sortClients">
+            <option value="none">Sortare</option>
+            <option value="az">Nume A-Z</option>
+            <option value="za">Nume Z-A</option>
+        </select>
+
+        <button id="exportCSV">Export CSV</button>
+    </section>
+
+    <!-- CLIENT LIST -->
+    <section class="client-list" id="clientList"></section>
+
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast"></div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
